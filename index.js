@@ -7,7 +7,7 @@ const client = new Discord.Client({
 const keepAlive = require('./server.js');
 keepAlive();
 
-function formatTime() { //Credits to V𝕀ꋊΛꌦ#1010
+function formatTime() { //Credits to pp09petyadecryptor#0
   const date = new Date();
   const options = {
     timeZone: 'Asia/Calcutta', //https://www.zeitverschiebung.net/en/ and find your city and enter here
@@ -20,7 +20,16 @@ function formatTime() { //Credits to V𝕀ꋊΛꌦ#1010
 
 client.on('ready', async () => {
   console.clear();
-  console.log(`${client.user.tag} - rich presence started!`);
+  console.log(`${client.user.tag} - RPC set!`);
+  console.log(`
+  ____  _     ____  ____  _____ ____  _____ _     _     _    ___  _   ____  _____ _____  _____  _____ ____  _ 
+/ ___\/ \ /\/   _\/   _\/  __// ___\/    // \ /\/ \   / \   \  \//  / ___\/  __//__ __\/__ __\/  __//  _ \/ \
+|    \| | |||  /  |  /  |  \  |    \|  __\| | ||| |   | |    \  /   |    \|  \    / \    / \  |  \  | | \|| |
+\___ || \_/||  \_ |  \_ |  /_ \___ || |   | \_/|| |_/\| |_/\ / /    \___ ||  /_   | |    | |  |  /_ | |_/|\_/
+\____/\____/\____/\____/\____\\____/\_/   \____/\____/\____//_/     \____/\____\  \_/    \_/  \____\\____/(_)`);
+
+                                                                                                             
+
 
   const r = new Discord.RichPresence()
     .setApplicationId('1195468879837810768') // make your bot in discord.com/developers and paste the application ID here
@@ -38,7 +47,10 @@ client.on('ready', async () => {
     .addButton('SUBSCRIBE US!', 'https://youtube.com/@GeometryDashLivestreaming_/');
 
   client.user.setActivity(r);
+  //-----------------------------------------------------------------------
   client.user.setPresence({ status: "idle" }); //dnd, online, idle, offline
+  // this doesn't work as all
+  //-----------------------------------------------------------------------
 
   let prevTime = null;
   setInterval(() => {
@@ -51,10 +63,11 @@ client.on('ready', async () => {
     }
   }, 1000); // Update every second
 });
+// The `YOUR DETAILS` will not be changed again.
 
 const mySecret = process.env['TOKEN'];
 client.login(mySecret);
 
 
 
-// put your token in secrets
+// put your token on Render.
